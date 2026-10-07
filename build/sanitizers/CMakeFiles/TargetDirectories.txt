@@ -1,0 +1,4 @@
+/workspaces/lab1/build/sanitizers/CMakeFiles/cpp_lab_1.dir
+/workspaces/lab1/build/sanitizers/CMakeFiles/test.dir
+/workspaces/lab1/build/sanitizers/CMakeFiles/edit_cache.dir
+/workspaces/lab1/build/sanitizers/CMakeFiles/rebuild_cache.dir

@@ -1,0 +1,31 @@
+name: C++ CI
+
+on:
+  push:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build-and-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Get project files
+        uses: actions/checkout@v4
+
+      - name: Configure normal build
+        run: cmake --preset normal
+
+      - name: Build normal version
+        run: cmake --build --preset normal
+
+      - name: Configure sanitizer build
+        run: cmake --preset sanitizers
+
+      - name: Build sanitizer version
+        run: cmake --build --preset sanitizers
+
+      - name: Run program with sanitizers
+        run: ctest --preset sanitizers

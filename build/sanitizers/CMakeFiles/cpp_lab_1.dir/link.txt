@@ -1,0 +1,1 @@
+/usr/bin/c++ -g -fsanitize=address,undefined CMakeFiles/cpp_lab_1.dir/src/main.cpp.o -o cpp_lab_1 

@@ -1,0 +1,67 @@
+Start testing: Oct 07 04:14 UTC
+----------------------------------------------------------
+1/1 Testing: run_program
+1/1 Test: run_program
+Command: "/workspaces/lab1/build/sanitizers/cpp_lab_1"
+Directory: /workspaces/lab1/build/sanitizers
+"run_program" start time: Oct 07 04:14 UTC
+Output:
+----------------------------------------------------------
+=================================================================
+==2281==ERROR: AddressSanitizer: heap-buffer-overflow on address 0x50200000001c at pc 0x638a6a7bc7de bp 0x7ffe5d6b5d10 sp 0x7ffe5d6b5d00
+READ of size 4 at 0x50200000001c thread T0
+    #0 0x638a6a7bc7dd in main /workspaces/lab1/src/main.cpp:8
+    #1 0x707f3aa791c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #2 0x707f3aa7928a in __libc_start_main_impl ../csu/libc-start.c:360
+    #3 0x638a6a7bc284 in _start (/workspaces/lab1/build/sanitizers/cpp_lab_1+0x2284) (BuildId: 4cd2975dc740f7e4717d744c6c1534bc991a531f)
+
+0x50200000001c is located 0 bytes after 12-byte region [0x502000000010,0x50200000001c)
+allocated by thread T0 here:
+    #0 0x707f3b70c6c8 in operator new[](unsigned long) ../../../../src/libsanitizer/asan/asan_new_delete.cpp:98
+    #1 0x638a6a7bc3d2 in main /workspaces/lab1/src/main.cpp:5
+    #2 0x707f3aa791c9 in __libc_start_call_main ../sysdeps/nptl/libc_start_call_main.h:58
+    #3 0x707f3aa7928a in __libc_start_main_impl ../csu/libc-start.c:360
+    #4 0x638a6a7bc284 in _start (/workspaces/lab1/build/sanitizers/cpp_lab_1+0x2284) (BuildId: 4cd2975dc740f7e4717d744c6c1534bc991a531f)
+
+SUMMARY: AddressSanitizer: heap-buffer-overflow /workspaces/lab1/src/main.cpp:8 in main
+Shadow bytes around the buggy address:
+  0x501ffffffd80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501ffffffe80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff00: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+  0x501fffffff80: 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00 00
+=>0x502000000000: fa fa 00[04]fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000080: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000100: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000180: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000200: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+  0x502000000280: fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa fa
+Shadow byte legend (one shadow byte represents 8 application bytes):
+  Addressable:           00
+  Partially addressable: 01 02 03 04 05 06 07 
+  Heap left redzone:       fa
+  Freed heap region:       fd
+  Stack left redzone:      f1
+  Stack mid redzone:       f2
+  Stack right redzone:     f3
+  Stack after return:      f5
+  Stack use after scope:   f8
+  Global redzone:          f9
+  Global init order:       f6
+  Poisoned by user:        f7
+  Container overflow:      fc
+  Array cookie:            ac
+  Intra object redzone:    bb
+  ASan internal:           fe
+  Left alloca redzone:     ca
+  Right alloca redzone:    cb
+==2281==ABORTING
+<end of output>
+Test time =   0.23 sec
+----------------------------------------------------------
+Test Failed.
+"run_program" end time: Oct 07 04:14 UTC
+"run_program" time elapsed: 00:00:00
+----------------------------------------------------------
+
+End testing: Oct 07 04:14 UTC
