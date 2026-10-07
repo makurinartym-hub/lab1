@@ -1,4 +1,0 @@
-/workspaces/lab1/build/normal/CMakeFiles/cpp_lab_1.dir
-/workspaces/lab1/build/normal/CMakeFiles/test.dir
-/workspaces/lab1/build/normal/CMakeFiles/edit_cache.dir
-/workspaces/lab1/build/normal/CMakeFiles/rebuild_cache.dir

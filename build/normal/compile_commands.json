@@ -1,8 +1,0 @@
-[
-{
-  "directory": "/workspaces/lab1/build/normal",
-  "command": "/usr/bin/c++   -g -o CMakeFiles/cpp_lab_1.dir/src/main.cpp.o -c /workspaces/lab1/src/main.cpp",
-  "file": "/workspaces/lab1/src/main.cpp",
-  "output": "CMakeFiles/cpp_lab_1.dir/src/main.cpp.o"
-}
-]
